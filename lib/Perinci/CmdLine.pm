@@ -22,8 +22,7 @@ L<Perinci::CmdLine::Any> that lets you choose between the two dynamically, a la
 Any::Moose. And finally there's also L<Perinci::CmdLine::Inline>, the even more
 lightweight version.
 
-This module exists solely for convenience of linking purposes. In the future the
-two separate implementation might also be reunited.
+This module exists solely for convenience of linking purposes.
 
 
 =head1 SEE ALSO
