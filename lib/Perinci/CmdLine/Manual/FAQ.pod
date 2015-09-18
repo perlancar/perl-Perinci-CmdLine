@@ -16,32 +16,56 @@ specific to L<Perinci::CmdLine::Any>.
 
 =head1 GENERAL
 
-=head2 Why are there two frameworks Perinci::CmdLine::Classic and Perinci::CmdLine::Lite?
+=head2 Why are there multiple frameworks/flavors for Perinci::CmdLine?
 
-There used to be a single flavor Perinci::CmdLine. As it grows in features, the
-startup overhead also grows. So another project is started,
+There are currently 3 (three) flavors of the framework:
+L<Perinci::CmdLine::Classic>, L<Perinci::CmdLine::Lite>, and
+L<Perinci::CmdLine::Inline>. Which one you should use depends on your needs,
+because sadly, there is no one-size-fits-all.
+
+B<Perinci::CmdLine::Classic.> Perinci::CmdLine::Classic (hereby called
+PC:Classic) is the first flavor which I developed (and it used to be called just
+Perinci::CmdLine). It has the most complete features as well as the prettiest
+output, but as it grows in features, other things like startup overhead and
+dependencies also grow.
+
+B<Perinci::CmdLine::Lite.> So another project is started,
 L<Perinci::CmdLine::Lite> (hereby called PC::Lite) that focuses on keeping
-startup overhead low to avoid making tab completion noticeably slow. It also
-tries to reduce the number of dependencies. Later, the original Perinci::CmdLine
-is renamed to L<Perinci::CmdLine::Classic> (hereby called PC::Classic). However,
-some PC::Classic features are still missing in PC::Lite.
+startup overhead low to avoid making tab completion delay noticeable. PC:Lite
+aims to make CLI scripts typically start below 0.05s, while PC:Classic-based
+scripts currently start in about 0.2-0.5s which causes a noticeable delay when
+doing tab completion. PC:Lite also tries to reduce the number of dependencies
+(from 100+ down to 30+ or so). Some PC:Classic features are still missing in
+PC:Lite (see next question).
 
-PC::Lite stays lightweight by avoiding the use of libraries that have large
+PC:Lite stays more lightweight by avoiding the use of libraries that have large
 dependencies or add too much to startup overhead. This includes replacing
 L<Perinci::Access> with L<Perinci::Access::Lite> for metadata access, avoiding
 L<Text::ANSITable> for formatting results, and replacing L<Log::Any::App> (which
 uses the relatively heavy L<Log::Log4perl>) with L<Log::Any::Adapter::Screen>
 for logging.
 
-PC::Lite tries to start under 0.04-0.05s to make shell tab completion
-convenient. On the other hand, PC::Classic application can spend between
-0.20-0.50s before displaying output, due to various abovementioned overheads:
-loading more libraries, etc.
-
 Implementation-wise, the two share a lot of common code in the form of their
 base class, L<Perinci::CmdLine::Base>. The interface is also 99% the same.
 
-It is possible that in the future the two versions will merge again.
+PC:Lite is the sane default choice, unless you need features that are currently
+not supported by PC:Lite, in which case you can consider using PC:Classic.
+
+It is possible that in the future the two versions will merge.
+
+B<Perinci::CmdLine::Inline.> There is another flavor called PC:Inline. The goal
+of this flavor is to make your CLI scripts depend on nothing but Perl and the
+core modules. (It is also possible to make PC:Classic- or PC:Lite-based CLI
+script to also be freestanding by techniques like fatpacking or datapacking, but
+the resulting packed script will be much larger.) It has the lowest number of
+dependencies and the fastest startup overhead (around 0.01s). But currently it
+also has the least features. See L<Perinci::CmdLine::Inline> for more details of
+the features it currently supports. This flavor is suitable for simple CLI
+scripts that need to be as lean and fast as possible, for example: L<hr> (in
+L<App::hr>) or L<gen-uuids> (in L<App::UuidUtils>).
+
+All the flavors share the basic concept: running your L<Rinci>-described
+functions on the command-line.
 
 =head2 What Classic features are currently still missing in Lite?
 
