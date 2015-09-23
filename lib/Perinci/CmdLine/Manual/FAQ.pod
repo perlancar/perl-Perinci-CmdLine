@@ -48,9 +48,6 @@ for logging.
 Implementation-wise, the two share a lot of common code in the form of their
 base class, L<Perinci::CmdLine::Base>. The interface is also 99% the same.
 
-PC:Lite is the sane default choice, unless you need features that are currently
-not supported by PC:Lite, in which case you can consider using PC:Classic.
-
 It is possible that in the future the two versions will merge.
 
 B<Perinci::CmdLine::Inline.> There is another flavor called PC:Inline. The goal
@@ -59,13 +56,27 @@ core modules. (It is also possible to make PC:Classic- or PC:Lite-based CLI
 script to also be freestanding by techniques like fatpacking or datapacking, but
 the resulting packed script will be much larger.) It has the lowest number of
 dependencies and the fastest startup overhead (around 0.01s). But currently it
-also has the least features. See L<Perinci::CmdLine::Inline> for more details of
-the features it currently supports. This flavor is suitable for simple CLI
-scripts that need to be as lean and fast as possible, for example: L<hr> (in
-L<App::hr>) or L<gen-uuids> (in L<App::UuidUtils>).
+also has the least features.
+
+It reduces startup overhead further by skipping the Riap layer and prefetching
+the Rinci metadata, precomputing the command-line options, and embedding all
+these in the scripts.
+
+See L<Perinci::CmdLine::Inline> for more details of the features it currently
+supports. This flavor is suitable for simple CLI scripts that need to be as lean
+and fast as possible, for example: L<hr> (in L<App::hr>) or L<gen-uuids> (in
+L<App::UuidUtils>).
 
 All the flavors share the basic concept: running your L<Rinci>-described
 functions on the command-line.
+
+So which one should you choose? PC:Lite is the sane default choice, unless you
+need features that are currently not supported by PC:Lite, in which case you can
+consider using PC:Classic. If you really need fast startup, you can opt for
+PC:Inline. But note that when the backend function's Rinci metadata changes, you
+will need to rebuild the script because the metadata is embedded in the script
+(while in PC:Lite and PC:Classic, the script simply request the Rinci metadata
+during runtime).
 
 =head2 What Classic features are currently still missing in Lite?
 
