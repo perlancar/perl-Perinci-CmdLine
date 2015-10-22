@@ -1,5 +1,16 @@
 Revision history for Perinci-CmdLine
 
+1.48    2015-10-22 (PERLANCAR)
+
+	- No functional changes.
+
+	- Apply spelling mistake fixes from [RT#107908], thanks gregor
+	  herrmann.
+
+	- [doc] Expand more on how PC:Inline reduces startup time and which
+	  framework should one choose.
+
+
 1.47    2015-09-18 (PERLANCAR)
 
         - Move manual from Perinci-CmdLine-Lite.
