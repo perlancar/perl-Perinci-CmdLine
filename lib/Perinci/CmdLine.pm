@@ -15,10 +15,10 @@ sub new {
 
 =head1 DESCRIPTION
 
-This module is currently empty, becase the implementation is currently split
-into L<Perinci::CmdLine::Lite> (for lightweight version) and
+This module is currently empty, because the implementation is currently split
+into L<Perinci::CmdLine::Lite> (the lightweight version) and
 L<Perinci::CmdLine::Classic> (the full but heavier version). There's also
-L<Perinci::CmdLine::Any> that lets you choose between the two dynamically, a la
+L<Perinci::CmdLine::Any> that lets you choose between the two dynamically, à la
 Any::Moose. And finally there's also L<Perinci::CmdLine::Inline>, the even more
 lightweight version.
 

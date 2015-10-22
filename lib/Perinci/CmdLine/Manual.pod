@@ -198,7 +198,7 @@ using PERINCI_CMDLINE_COLOR_THEME=Default::no_color.
 =head1 CONFIGURATION FILE
 
 Configuration files are read to preset the value of arguments, before
-potentially overriden/merged with command-line options. Configuration files are
+potentially overridden/merged with command-line options. Configuration files are
 in L<IOD> format, which is basically C<INI> with some extra features.
 
 By default, configuration files are searched in C</etc> and home directory, with
