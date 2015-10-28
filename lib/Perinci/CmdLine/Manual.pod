@@ -211,13 +211,15 @@ command-line option.
 If user does not want to read configuration file, she can issue C<--no-config>
 command-line option.
 
-The configuration file's section corresponds to subcommand names and/or profile
-names. Profiles are ways to specify multiple sets/cases/scenarios in a single
-configuration file.
+INI files have the concept of "sections". In Perinci::CmdLine, you can use
+sections to put settings that will only be applied to a certain subcommand, or a
+certain "profile". "Config profiles" is a way to specify multiple
+sets/cases/scenarios in a single configuration file.
 
 Example 1 (without any profile or subcommand):
 
  ; prog.conf
+
  foo=1
  bar=2
 
@@ -229,9 +231,11 @@ When executing program (the comments will show what arguments are set):
 Example 2 (with profiles):
 
  ; prog.conf
+
  [profile=profile1]
  foo=1
  bar=2
+
  [profile=profile2]
  foo=10
  bar=20
@@ -245,32 +249,35 @@ When executing program:
 Example 3 (with subcommands):
 
  ; prog.conf
- [subcommand1]
+
+ [subcommand=sc1]
  foo=1
  bar=2
- [subcommand2]
+
+ [subcommand=sc2]
  baz=3
  qux=4
 
 When executing program:
 
- % prog subcommand1; # {foo=>1, bar=>2}
- % prog subcommand2; # {baz=>3, qux=>4}
+ % prog sc1; # {foo=>1, bar=>2}
+ % prog sc2; # {baz=>3, qux=>4}
 
 Example 4 (with subcommands and profiles):
 
  ; prog.conf
- [subcommand1 profile=profile1]
+ [subcommand=sc1 profile=profile1]
  foo=1
  bar=2
- [subcommand1 profile=profile2]
+
+ [profile=profile2 subcommand=sc1]
  foo=10
  bar=20
 
 When executing program:
 
- % prog subcommand1 --config-profile profile1; # {foo=>1, bar=>2}
- % prog subcommand1 --config-profile profile2; # {foo=>10, bar=>20}
+ % prog sc1 --config-profile profile1; # {foo=>1, bar=>2}
+ % prog sc1 --config-profile profile2; # {foo=>10, bar=>20}
 
 
 =head1 COMMAND-LINE OPTION/ARGUMENT PARSING
