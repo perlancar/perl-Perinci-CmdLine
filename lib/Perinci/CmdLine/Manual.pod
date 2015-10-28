@@ -208,7 +208,7 @@ contents are merged together.
 If user wants to use a custom configuration file, she can issue C<--config-path>
 command-line option.
 
-If user does not want to read configuration file, she can issue C<--noconfig>
+If user does not want to read configuration file, she can issue C<--no-config>
 command-line option.
 
 The configuration file's section corresponds to subcommand names and/or profile
