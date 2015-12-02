@@ -868,3 +868,5 @@ So you can pipe binary data to files/processes unmodified.
 =head1 SEE ALSO
 
 L<Perinci::CmdLine::Manual>
+
+L<Perinci::Examples>
