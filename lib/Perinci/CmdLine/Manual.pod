@@ -23,7 +23,7 @@ YAML. For example, if the C<tags> argument is defined as 'array', then all of
 below are equivalent:
 
  % mycmd --tags-yaml '[foo, bar, baz]'
- % mycmd --tags-yaml '["foo","bar","baz"]'
+ % mycmd --tags-json '["foo","bar","baz"]'
  % mycmd --tags foo --tags bar --tags baz
 
 =item * Help message (utilizing information from metadata, supports translation)
