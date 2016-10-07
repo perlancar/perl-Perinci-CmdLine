@@ -730,7 +730,7 @@ TODO
 =head2 REMOTE FUNCTION
 
 
-=head1 COMPLETION
+=head1 SHELL COMPLETION
 
 =head2 Custom completion
 
@@ -796,9 +796,6 @@ XXX mention about C<testcomp>.
 =head2 Modifying common options
 
 =head2 Customizing help message
-
-=head2 Shell tab completion
-
 
 =head2 Dealing with binary data
 
