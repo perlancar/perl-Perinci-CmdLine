@@ -1,5 +1,12 @@
 Revision history for Perinci-CmdLine
 
+1.50    2016-12-10 (PERLANCAR)
+
+	- No functional changes.
+
+	- Typo [RT#118566].
+
+
 1.49    2016-10-07 (PERLANCAR)
 
         - Update and fix documentation (including contribution from Andy Jack,
