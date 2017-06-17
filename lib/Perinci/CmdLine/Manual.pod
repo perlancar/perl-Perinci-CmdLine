@@ -422,3 +422,6 @@ or L<Progress::Any::Output::LogAny> if program doesn't run interactively.
 L<Perinci::CmdLine::Manual::Examples>
 
 L<Perinci::CmdLine::Manual::FAQ>
+
+A list of tutorial posts on my blog, will eventually be moved to POD:
+L<https://perlancar.wordpress.com/category/pericmd-tut/>
