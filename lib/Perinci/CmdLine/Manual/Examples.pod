@@ -783,7 +783,7 @@ Completion works by the shell invoking our (the same) program with C<COMP_LINE>
 and C<COMP_POINT> environment variables. You can do something like this to see
 debugging information:
 
- % COMP_LINE='myprog --arg x' COMP_POINT=13 PERL5OPT=-MLog::Any::App TRACE=1 myprog --arg x
+ % COMP_LINE='myprog --arg x' COMP_POINT=13 PERL5OPT=-MLog::ger::App TRACE=1 myprog --arg x
 
 You can also use the L<testcomp> utility (included in the L<App::CompleteUtils>
 distribution) to help debug your custom completion:
