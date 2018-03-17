@@ -390,8 +390,7 @@ scripts activated immediately.
 
 For functions that express that they do progress updating (by setting their
 C<progress> feature to true), Perinci::CmdLine will setup an output, currently
-either L<Progress::Any::Output::TermProgressBar> if program runs interactively,
-or L<Progress::Any::Output::LogAny> if program doesn't run interactively.
+either L<Progress::Any::Output::TermProgressBar> if program runs interactively.
 
 
 =head1 SEE ALSO
