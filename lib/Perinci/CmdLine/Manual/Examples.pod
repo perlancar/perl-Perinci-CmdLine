@@ -187,7 +187,7 @@ validation.
              schema  => [array => {of => 'str', min_len=>1}],
              req     => 1,
              pos     => 0,
-             greedy  => 1,
+             slurpy  => 1,
          },
          gender => {
              summary => 'The gender of the name(s)',
@@ -228,7 +228,7 @@ argument. C<name> is specified as having a type of array of strings. To set this
 argument from the CLI, you can either specify multiple times (e.g. C<--name
 NAME1 --name NAME2 ...>) or specify using JSON (i.e. C<--name-json JSONSTR>).
 
-Second, the C<name> argument specifies the C<greedy> property. This is used in
+Second, the C<name> argument specifies the C<slurpy> property. This is used in
 conjunction with the C<pos> property. It declares that the argument will gobble
 up command-line arguments from C<pos> to the end. So you can also specify the
 values of the C<name> argument with C<ARG1 ARG2 ...>.
