@@ -39,6 +39,9 @@ triggered):
 
  % PERINCI_CMDLINE_PLUGINS=-DumpArgs,-Exit@after_validate_args your-cli --trace ...
 
+B<Logging other components.> See L<Log::ger::For::LWP>,
+L<Log::ger::For::HTTP::Tiny>, L<Log::ger::For::DBI>, L<Log::ger::DBI::Query>.
+
 
 =head1 SEE ALSO
 
