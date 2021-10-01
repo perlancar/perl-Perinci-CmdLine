@@ -1,6 +1,10 @@
+# no code
+## no critic: TestingAndDebugging::RequireStrict
 package Perinci::CmdLine;
 
+# AUTHORITY
 # DATE
+# DIST
 # VERSION
 
 sub new {

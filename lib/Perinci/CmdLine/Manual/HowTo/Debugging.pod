@@ -1,0 +1,48 @@
+package Perinci::CmdLine::Manual::HowTo::Debugging; # just to make podweaver happy
+
+# AUTHORITY
+# DATE
+# DIST
+# VERSION
+
+1;
+# ABSTRACT: How-to guides related to debugging
+
+=head1 DESCRIPTION
+
+If you encounter issues with Perinci::CmdLine, you can try these things to aid
+with debugging:
+
+B<Increase log level.> Perinci::CmdLine uses L<Log::ger>. If your command-line
+object is instantiated with C<log> attribute set to true, you just need to
+specify C<--verbose>, C<--debug>, or C<--trace> command-line options to see more
+logging statements:
+
+ % your-cli --verbose ...
+ % your-cli --debug ...
+ % your-cli --trace ...
+ % your-cli --log-level trace ... ;# ditto
+
+If your command-line object is not instantiated with C<log> attribute set to
+true, you can enable logging with:
+
+ % PERL5OPT=-MLog::ger::Screen LOG_LEVEL=info your-cli ...
+ % PERL5OPT=-MLog::ger::Screen DEBUG=1 your-cli ...
+ % PERL5OPT=-MLog::ger::Screen TRACE=1 your-cli ...
+
+B<Dump parsed arguments, internal data structures.> If seeing log statements
+does not give clue, you can try dumping various data structures. This can be
+done with plugins. For example, to dump parsed command-line arguments after
+validation and then exit, you can use the following command (setting log level
+to trace is helpful to see the program flow and at what points the plugins are
+triggered):
+
+ % PERINCI_CMDLINE_PLUGINS=-DumpArgs,-Exit@after_validate_args your-cli --trace ...
+
+B<Logging other components.> See L<Log::ger::For::LWP>,
+L<Log::ger::For::HTTP::Tiny>, L<Log::ger::For::DBI>, L<Log::ger::DBI::Query>.
+
+
+=head1 SEE ALSO
+
+L<Log::ger>
