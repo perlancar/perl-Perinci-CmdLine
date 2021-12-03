@@ -1,6 +1,10 @@
+# no code
+## no critic: TestingAndDebugging::RequireUseStrict
 package Perinci::CmdLine::Manual; # just to make podweaver happy
 
+# AUTHORITY
 # DATE
+# DIST
 # VERSION
 
 1;
@@ -14,7 +18,7 @@ command-line options and arguments to the function. It accesses functions via
 L<Riap> protocol (using the L<Perinci::Access> Riap client library) so you can
 use remote functions transparently. Features:
 
-=over 4
+=over
 
 =item * Command-line options parsing
 
