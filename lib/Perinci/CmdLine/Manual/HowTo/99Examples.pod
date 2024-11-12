@@ -1,6 +1,10 @@
 package Perinci::CmdLine::Manual::Examples; # just to make podweaver happy
 
+use strict;
+
+# AUTHORITY
 # DATE
+# DIST
 # VERSION
 
 1;
@@ -579,6 +583,15 @@ TODO
 =head2 Pager
 
 TODO
+
+=head2 Word wrapping
+
+If your table has long text that is better shown in a multi-line cell, you can
+do:
+
+ % FORMAT_PRETTY_TABLE_BACKEND=Text::ANSITable your-app ...
+
+to use L<Text::ANSITable>, which by default wraps long text in table cells.
 
 
 =head1 SUBCOMMANDS
