@@ -6,6 +6,12 @@ package Perinci::CmdLine::Manual::FAQ; # just to make podweaver happy
 1;
 # ABSTRACT: FAQs
 
+=head1 TODO
+
+Migrate to the Divio information structure. Some FAQ items belong in the
+Explanation category, some in How-To Guide category, ...
+
+
 =head1 NOMENCLATURE
 
 C<[PC::Classic]> denotes that the answer applies to L<Perinci::CmdLine::Classic>
