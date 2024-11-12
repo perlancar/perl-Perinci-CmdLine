@@ -10,6 +10,35 @@ package Perinci::CmdLine::Manual; # just to make podweaver happy
 1;
 # ABSTRACT: Perinci::CmdLine manual
 
+=head1 ABOUT THIS MANUAL
+
+This manual is organized using the documentation structure described in [1],
+where each documentation is categorized into one of four types:
+
+                                               |
+                    TUTORIAL                   |               HOW-TO GUIDE
+                                               |
+     - learning-oriented                       |  - problem-oriented
+     - goal: allow newcomer to get started     |  - goal: show how to solve specific problem
+     - form: lessons                           |  - form: a series of steps
+     - analogy: teaching a child to cook       |  - analogy: a recipe in a cookery book
+                                               |
+ ------(Most useful when we're studying)-------+-------(Most useful when we're working)------
+                                               |
+                   EXPLANATION                 |               REFERENCE
+                                               |
+     - understanding-oriented                  |  - information-oriented
+     - goal: explain                           |  - goal: describe the machinery
+     - form: discursive explanation            |  - form: dry description
+     - analogy: article on culinary social     |  - analogy: a reference encyclopedia
+       history                                 |    article
+
+[1] https://docs.divio.com/documentation-system/
+
+However, a lot of existing documentation are still not migrated to the above
+system.
+
+
 =head1 DESCRIPTION
 
 Perinci::CmdLine is a command-line application framework. It parses command-line
@@ -358,10 +387,6 @@ either L<Progress::Any::Output::TermProgressBar> if program runs interactively.
 
 
 =head1 SEE ALSO
-
-L<Perinci::CmdLine::Manual::Examples>
-
-L<Perinci::CmdLine::Manual::FAQ>
 
 A list of tutorial posts on my blog, will eventually be moved to POD:
 L<https://perlancar.wordpress.com/category/pericmd-tut/>
