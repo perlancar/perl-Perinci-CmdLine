@@ -10,7 +10,9 @@ package Perinci::CmdLine::Manual; # just to make podweaver happy
 1;
 # ABSTRACT: Perinci::CmdLine manual
 
-=head1 ABOUT THIS MANUAL
+=head1 DESCRIPTION
+
+=head2 About This Manual
 
 This manual is organized using the documentation structure described in [1],
 where each documentation is categorized into one of four types:
@@ -39,7 +41,7 @@ However, a lot of existing documentation are still not migrated to the above
 system.
 
 
-=head1 DESCRIPTION
+=head2 About Perinci::CmdLine
 
 Perinci::CmdLine is a command-line application framework. It parses command-line
 options and dispatches to one of your specified Perl functions, passing the
@@ -93,7 +95,7 @@ recognized.
 =back
 
 
-=head1 CONCEPTS
+=head2 Concepts
 
 Perinci::CmdLine is very function-oriented (and not object-oriented, on
 purpose). You write your "business logic" in a function (of course, you are free
@@ -151,7 +153,7 @@ C<http://example.com/api/somefunc>. All the features like options parsing,
 help/usage, as well as tab completion will work with remote functions as well.
 
 
-=head1 LOGGING
+=head2 Logging
 
 Logging is done with L<Log::ger> (for producing). For displaying logs,
 L<Log::ger::App> is used.
@@ -164,7 +166,7 @@ like:
  % PERL5OPT=-MLog::ger::App TRACE=1 yourcli.pl
 
 
-=head1 CONFIGURATION FILE
+=head2 Configuration File
 
 Configuration files are read to preset the value of arguments, before
 potentially overridden/merged with command-line options. Configuration files are
@@ -249,7 +251,7 @@ When executing program:
  % prog sc1 --config-profile profile2; # {foo=>10, bar=>20}
 
 
-=head1 COMMAND-LINE OPTION/ARGUMENT PARSING
+=head2 Command-line Option/Argument Parsing
 
 This section describes how Perinci::CmdLine parses command-line
 options/arguments into function arguments. Command-line option parsing is
@@ -352,7 +354,7 @@ The resulting argument will be:
 For more examples on argument submetadata, see L<Perinci::Examples::SubMeta>.
 
 
-=head1 SHELL COMPLETION
+=head2 Shell Completion
 
 The framework can detect when C<COMP_LINE> and C<COMP_POINT> environment
 variables (set by bash when completing using external command) are set and then
@@ -379,7 +381,7 @@ L<cpanm-shcompgen>, you can install modules and have the shell completion of
 scripts activated immediately.
 
 
-=head1 PROGRESS INDICATOR
+=head2 Progress Indicator
 
 For functions that express that they do progress updating (by setting their
 C<progress> feature to true), Perinci::CmdLine will setup an output, currently
