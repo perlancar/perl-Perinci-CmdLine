@@ -12,6 +12,13 @@ package Perinci::CmdLine::Manual; # just to make podweaver happy
 
 =head1 DESCRIPTION
 
+=head2 List Of Documents Included In This Distribution
+
+This is the list of PODs included in this distribution:
+
+# INSERT_MODULES_LIST /^Perinci::CmdLine::Manual/
+
+
 =head2 About This Manual
 
 This manual is organized using the documentation structure described in [1],
